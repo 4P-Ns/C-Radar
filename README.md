@@ -1,5 +1,5 @@
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=000080&height=300&section=header&text=C-Radar&fontSize=70&fontColor=FFFFFF&animation=fadeIn&width=1200" width="1200" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0E4C92&height=300&section=header&text=C-Radar&fontSize=70&fontColor=FFFFFF&animation=fadeIn&width=1200" width="1200" />
 
 
 ## <div align="center" style="font-size: 70px; color: #000080; animation: glow 1.5s infinite;">  🔎 포착! 당신의 서비스 로그, 이탈자와 이상 탐지를 한눈에 🔎 </div>
@@ -27,7 +27,20 @@
 <br>
 
 ## 1️⃣ 프로젝트 개요
+이 프로젝트는 **서비스 로그를 분석**하여 이탈자 탐지와 이상 행동을 식별하는 것을 목표로 합니다.  
+**INFO, WARN, ERROR, FATAL** 로그 데이터를 기반으로 사용자 행동과 에러 발생 패턴을 시각화하고,  
+서비스의 품질 향상을 위한 통찰을 제공합니다. 
 
+### 📊 핵심 기능
+1. **서비스 이탈자 분석**  
+   - 사용 중: INFO 로그 및 반복 WARN 로그 탐지  
+   - 사용 종료: 로그 메시지에서 `exit` 또는 `background` 키워드 분석  
+
+2. **이상 탐지**  
+   - 로그 레벨(INFO, WARN, ERROR, FATAL) 기반의 이상 행동 식별  
+
+3. 로그 데이터를 활용한 **대시보드**로 시각화 제공
+   - 대시보드 URL: [Dashboard 바로가기]
 
 
 </br>
@@ -89,4 +102,4 @@
 ## 6️⃣ 피드백
 
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=000080&height=150&section=footer" width="1000" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0E4C92&height=150&section=footer" width="1000" />
