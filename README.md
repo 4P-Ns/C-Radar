@@ -1,19 +1,22 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=000080&height=150&section=header" width="1000" />
 
-<div align="center">
-
-<h1 style="font-size: 36px;">🔎 C-Radar</h1>
-
-<p style="font-size: 24px;"> ✨어쩌고저쩌고</p>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=000080&height=300&section=header&text=C-Radar&fontSize=70&fontColor=FFFFFF&animation=fadeIn&width=1200" width="1200" />
 
 
-</br>
-</div>
+## <div align="center" style="font-size: 70px; color: #000080; animation: glow 1.5s infinite;">  🔎 포착! 당신의 서비스 로그, 이탈자와 이상 탐지를 한눈에 🔎 </div>
+
+<br>
+
+<br>
+
+<br>
+
+
+
 
 ## 📍목차
 - [1️⃣ 프로젝트 개요](#1%EF%B8%8F⃣-프로젝트-개요)
 - [2️⃣ 팀원 소개](#2%EF%B8%8F⃣-팀원-소개)
-- [3️ 개발 환경 설정](#3%EF%B8%8F⃣-개발-환경-설정)
+- [3️⃣ 개발 환경 설정](3%EF%B8%8F⃣-개발-환경-설정정)
 - [4️⃣ ERD](#4%EF%B8%8F⃣-erd)
 - [5️⃣ 회고](#5%EF%B8%8F⃣-회고)
 - [6️⃣ 피드백](#6%EF%B8%8F⃣-피드백)
@@ -42,7 +45,7 @@
 
 <br>
 
-## 3️ 개발 환경 
+## 3️⃣ 개발 환경 설정
 
 ### 🛠 기술 스택
 
@@ -52,6 +55,8 @@
 <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> 
 <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"> 
 <img src="https://img.shields.io/badge/dbeaver-382923?style=for-the-badge&logo=dbeaver&logoColor=white"> 
+<img src="https://img.shields.io/badge/elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white"> 
+<img src="https://img.shields.io/badge/kibana-005571?style=for-the-badge&logo=kibana&logoColor=white">   
 </div>
 
 <br>
