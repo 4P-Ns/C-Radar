@@ -153,24 +153,32 @@ ex.. 404 200
 
 **⚔ MySQL 데이터가 ElasticSearch에 들어가지 않는 문제**
 
-발생한 에러 로그:
+**발생한 에러 로그:**
 ```
 [2025-01-21T15:14:00,207][ERROR][logstash.inputs.jdbc     ][main][1c1466bdc1156c09cdaa6367548cadf70059fe13237f40acbcf85fddd30f859c] Unable to connect to database. Tried 1 times {:error_message=>"Java::JavaSql::SQLException: The server time zone value 'KST' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support."}
 ```
 
+**해결방안:** 타임존(Asia/Seoul)을 구체적으로 지정한다.
+
+```
+    jdbc_connection_string => "jdbc:mysql://192.168.1.77:3306/cradar?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul"
+```
+
+<br>
+
 **⚔ MySQL의 중복 데이터가 ElasticSearch에 주기마다 삽입되는 문제**
 
-해결방안: logstash의 .conf 파일에 ```document_id => "%{id}"```를 삽입한다.
+**해결방안:** logstash의 .conf 파일 output 파트에 ```document_id => "%{id}"```를 삽입한다.
 
 >
 >```document_id => "%{id}"```의 의미: 
->Logstash에서 Elasticsearch에 데이터를 삽입할 때, Logstash의 이벤트에서 id 필드에 해당하는 값을 Elasticsearch 문서의 ID로 사용하겠다는 뜻이다.
+>Logstash에서 Elasticsearch에 데이터를 삽입할 때, Logstash의 이벤트에서 id 필드에 해당하는 값을 **Elasticsearch 문서의 ID로 사용**하겠다는 뜻이다.
 >
->이렇게 설정하면, Logstash가 MySQL에서 가져온 각 데이터 항목에 포함된 id 값을 Elasticsearch 문서의 고유 ID로 지정하며 같은 ID를 가진 문서가 이미 존재하면 해당 문서를 업데이트한다.
+>이렇게 설정하면, Logstash가 MySQL에서 가져온 각 데이터 항목에 포함된 id 값을 Elasticsearch 문서의 고유 ID로 지정하며 **같은 ID를 가진 문서가 이미 존재하면 해당 문서를 업데이트**한다.
 >
->따라서, document_id => "%{id}"를 설정하면, 동일한 id를 가진 데이터가 새로 들어오더라도 이미 Elasticsearch에 존재하는 문서가 덮어쓰여지거나 업데이트된다.
+>따라서, document_id => "%{id}"를 설정하면, 동일한 id를 가진 데이터가 새로 들어오더라도 **이미 Elasticsearch에 존재하는 문서가 덮어쓰여지거나 업데이트**된다.
 
-예시: 
+**예시:**
 
 ```java
 input {
