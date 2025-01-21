@@ -16,7 +16,7 @@
 ## 📍목차
 - [1️⃣ 프로젝트 개요](#1%EF%B8%8F⃣-프로젝트-개요)
 - [2️⃣ 팀원 소개](#2%EF%B8%8F⃣-팀원-소개)
-- [3️⃣ 개발 환경 설정](3%EF%B8%8F⃣-개발-환경-설정정)
+- [3️⃣ 개발 환경 설정](3%EF%B8%8F⃣-개발-환경-설정)
 - [4️⃣ ERD](#4%EF%B8%8F⃣-erd)
 - [5️⃣ 회고](#5%EF%B8%8F⃣-회고)
 - [6️⃣ 피드백](#6%EF%B8%8F⃣-피드백)
@@ -39,7 +39,7 @@
 2. **이상 탐지**  
    - 로그 레벨(INFO, WARN, ERROR, FATAL) 기반의 이상 행동 식별  
 
-3. 로그 데이터를 활용한 **대시보드**로 시각화 제공
+3. **로그 데이터를 활용한 "대시보드"로 시각화 제공**
    - 대시보드 URL: [Dashboard 바로가기]
 
 
@@ -84,18 +84,46 @@
 
 <br>
 
-### 🖥️ DB 설정
+### 🖥️ 아키텍처
 
+
+![image](https://github.com/user-attachments/assets/83cb6460-a3c0-498a-8623-12702e5d5309)
 
 
 
 <br>
 
 <br>
+
+## 5️⃣ 테이블 형태
+
+![image](https://github.com/user-attachments/assets/a19248dc-a26a-4fe0-8a80-cb89726b119a)
+
+### LEVEL
+
+INFO, WARN, ERROR, FATAL
+
+### TIMESTAMP
+
+ex.. "2025-01-20T14:12:34Z”
+
+### SOURCE
+
+어디서 에러가 나는가?
+
+### USERID
+
+서비스를 사용한 user의 id
+
+### MESSAGE
+
+user의 행동 혹은 error 내용
+
+### LOG_TYPE
+
+ex.. 404 200
 
 ## 5️⃣ 회고
-
-
 
 <br>
 
