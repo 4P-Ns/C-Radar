@@ -36,7 +36,7 @@
 
 ### [🙆🏻‍♂️ 팀원](#목차)
 
-|<img src="https://avatars.githubusercontent.com/u/80048007?v=4" width="250" height="190"/>|<img src="https://avatars.githubusercontent.com/u/79669001?v=4?v=4" width="250" height="190"/>|<img src="https://avatars.githubusercontent.com/u/179544856?v=4" width="250" height="190"/>|<img src="https://avatars.githubusercontent.com/u/115103394?v=4" width="250" height="190"/>|
+|<img src="https://avatars.githubusercontent.com/u/80048007?v=4" width="250" height="190"/>|<img src="https://avatars.githubusercontent.com/u/60309978?v=4" width="250" height="190"/>|<img src="https://avatars.githubusercontent.com/u/179544856?v=4" width="250" height="190"/>|<img src="https://avatars.githubusercontent.com/u/115103394?v=4" width="250" height="190"/>|
 |:-:|:-:|:-:|:-:|
 |박영진<br/>[@DoomchitYJ](https://github.com/DoomchitYJ)|박정호<br/>[@Jeongho427](https://github.com/Jeongho427)|박진현<br/>[@jinhyunpark929](https://github.com/jinhyunpark929)|이현정<br/>[@nanahj](https://github.com/nanahj)|
 
