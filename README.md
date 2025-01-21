@@ -113,6 +113,15 @@
 
 ![image](https://github.com/user-attachments/assets/a19248dc-a26a-4fe0-8a80-cb89726b119a)
 
+| Field | Contents |
+| :---: | :---: |
+| LEVEL | INFO, WARN, ERROR, FATAL |
+| TIMESTAMP | "2025-01-20T14:12:34Z” Format |
+| SOURCE | ERROR 발생 위치 |
+| USERID | 서비스 사용자 ID |
+| MESSAGE | USER 행동 or ERROR 내용 |
+| LOG_TYPE | 400, 200 |
+
 ### LEVEL
 
 INFO, WARN, ERROR, FATAL
