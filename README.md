@@ -40,7 +40,8 @@
    - 로그 레벨(INFO, WARN, ERROR, FATAL) 기반의 이상 행동 식별  
 
 3. **로그 데이터를 활용한 "대시보드"로 시각화 제공**
-   - 대시보드 URL: [Dashboard 바로가기]
+
+   - 대시보드 URL: [Dashboard 바로가기](http://192.168.1.77:5601/app/dashboards#/view/39ad3630-d7da-11ef-97a0-756f62d8a917?_g=(filte[…]A(from%3A'2024-10-29T17%3A55%3A57.524Z'%2Cto%3Anow)))
 
 
 </br>
@@ -123,9 +124,75 @@ user의 행동 혹은 error 내용
 
 ex.. 404 200
 
-## 5️⃣ 회고
 
 <br>
+
+## 5️⃣ 트러블슈팅
+
+**⚔ MySQL 데이터가 ElasticSearch에 들어가지 않는 문제**
+
+발생한 에러 로그:
+```
+[2025-01-21T15:14:00,207][ERROR][logstash.inputs.jdbc     ][main][1c1466bdc1156c09cdaa6367548cadf70059fe13237f40acbcf85fddd30f859c] Unable to connect to database. Tried 1 times {:error_message=>"Java::JavaSql::SQLException: The server time zone value 'KST' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support."}
+```
+
+**⚔ MySQL의 중복 데이터가 ElasticSearch에 주기마다 삽입되는 문제**
+
+해결방안: logstash의 .conf 파일에 ```document_id => "%{id}"```를 삽입한다.
+
+>
+>```document_id => "%{id}"```의 의미: 
+>Logstash에서 Elasticsearch에 데이터를 삽입할 때, Logstash의 이벤트에서 id 필드에 해당하는 값을 Elasticsearch 문서의 ID로 사용하겠다는 뜻이다.
+>
+>이렇게 설정하면, Logstash가 MySQL에서 가져온 각 데이터 항목에 포함된 id 값을 Elasticsearch 문서의 고유 ID로 지정하며 같은 ID를 가진 문서가 이미 존재하면 해당 문서를 업데이트한다.
+>
+>따라서, document_id => "%{id}"를 설정하면, 동일한 id를 가진 데이터가 새로 들어오더라도 이미 Elasticsearch에 존재하는 문서가 덮어쓰여지거나 업데이트된다.
+
+예시: 
+
+```java
+input {
+  jdbc {
+    jdbc_driver_library => "C:/02.devEnv/mysql-connector-java/mysql-connector-java-8.0.18.jar"
+    jdbc_driver_class => "com.mysql.cj.jdbc.Driver"
+    jdbc_connection_string => "jdbc:mysql://192.168.1.77:3306/cradar?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul"
+    jdbc_user => "cradar"
+    jdbc_password => "cradar"
+    schedule => "* * * * *"
+    
+    # SQL_LAST_VALUE를 추적할 컬럼 설정
+    use_column_value => true
+    tracking_column => "created_at"  # 또는 updated_at 등 타임스탬프 컬럼
+    tracking_column_type => "timestamp"
+    
+    # 마지막 실행 시간 저장 위치
+    last_run_metadata_path => "C:/02.devEnv/ELK/logstash-7.11.1/last_run_metadata.txt"
+    
+    # 증분 업데이트를 위한 SQL 쿼리
+    # statement => "SELECT * FROM log WHERE timestamp > :sql_last_value ORDER BY timestamp ASC"
+    statement => "SELECT *, UNIX_TIMESTAMP(created_at) AS unix_ts_in_secs FROM log WHERE (UNIX_TIMESTAMP(created_at) > :sql_last_value AND created_at < NOW()) ORDER BY created_at ASC"
+  }
+}
+
+filter {
+  mutate {
+    remove_field => [ "@timestamp" ]
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["localhost:9200"]
+    index => "cradar"
+    document_id => "%{id}"
+  }
+  stdout { codec => json_lines }
+}
+```
+
+
+## 5️⃣ 회고
+
 
 ## 6️⃣ 피드백
 
