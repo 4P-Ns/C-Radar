@@ -6,3 +6,13 @@
 ![image](https://github.com/user-attachments/assets/ce3b5fc1-f8be-4a0b-b58e-3b89ba411bc0)
 
 
+---
+
+
+### 2. 맞춤형 전략을 적용하여 유저 retension 확보 사례<br>
+
+![image](https://github.com/user-attachments/assets/692cae81-f441-4709-9fc0-4e469047c154)
+
+
+---
+
