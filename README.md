@@ -18,7 +18,6 @@
 - [4️⃣ ERD](#4%EF%B8%8F⃣-erd)
 - [5️⃣ Trouble Shooting](#5%EF%B8%8F⃣-trouble-shooting)
 - [6️⃣ Retrospective](#6%EF%B8%8F⃣-retrospective)
-- [7️⃣ Feedbacks](#7%EF%B8%8F⃣-feedbacks)
 
 
 <br>
@@ -294,8 +293,6 @@ output {
 4. **기술적 역량 강화**  
    - Logstash의 필요성과 기능을 심도 있게 이해하며 활용 능력을 향상시킴.  
    - 복잡하고 도전적인 프로젝트에 참여할 수 있는 기술적 자신감을 얻음.
-
-## 7️⃣ Feedbacks
 
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0E4C92&height=150&section=footer" width="1000" />
