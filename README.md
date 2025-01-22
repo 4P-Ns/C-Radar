@@ -109,8 +109,111 @@
 
 ![image](https://github.com/user-attachments/assets/9f48e40b-36ac-48e6-83b8-909d26a72de4)
 
+<br>
+
+### 🛠 Configuration
+
+**1. MySQL Connector 설치**
+
+https://downloads.mysql.com/archives/c-j/
+
+![image](https://github.com/user-attachments/assets/c28f7618-24f1-40ba-844c-96160eb55c35)
+
+Windows는 Operating System: 선택 항목에 없다. Platform Independent로 선택한다.
+
+"Platform Independent (Architecture Independent), Compressed TAR Archive"로 다운로드하고 원하는 경로에 압축을 해제한다.
+
+**2. .conf 파일 수정**
+
+JDBC 코드를 입력한다.
+
+**a. input**
+```
+input {
+  jdbc {
+    jdbc_driver_library => "C:/02.devEnv/mysql-connector-java/mysql-connector-java-8.0.18.jar"
+    jdbc_driver_class => "com.mysql.cj.jdbc.Driver"
+    jdbc_connection_string => "jdbc:mysql://IP주소/DB이름?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul"
+    jdbc_user => "유저이름"
+    jdbc_password => "비밀번호"
+    schedule => "* * * * *" # 1분 주기로 업데이트
+    
+    # SQL_LAST_VALUE를 추적할 컬럼 설정
+    use_column_value => true
+    tracking_column => "created_at"  # MySQL에서 지정한 column명으로 변경
+    tracking_column_type => "timestamp"
+    
+    # 마지막 실행 시간 저장 위치
+    last_run_metadata_path => "C:/02.devEnv/ELK/logstash-7.11.1/last_run_metadata.txt"
+    
+    # 증분 업데이트를 위한 SQL 쿼리
+    # statement => "SELECT * FROM log WHERE timestamp > :sql_last_value ORDER BY timestamp ASC"
+    statement => "SELECT *, UNIX_TIMESTAMP(created_at) AS unix_ts_in_secs FROM log WHERE (UNIX_TIMESTAMP(created_at) > :sql_last_value AND created_at < NOW()) ORDER BY created_at ASC"
+  }
+}
+```
 
 <br>
+
+>**🧨 참고: schedule 표현식**
+>
+>```
+>* * * * *
+>```
+>각 위치는 특정 시간 단위를 나타내며, 왼쪽에서 오른쪽으로 아래와 같이 해석된다.
+>
+> 분 (Minutes): 0-59
+>
+> 시간 (Hours): 0-23 (24시간 형식)
+>
+> 일 (Day of Month): 1-31
+>
+> 월 (Month): 1-12
+>
+> 요일 (Day of Week): 0-6 (0은 일요일)
+>
+><br>
+>
+> **와일드카드와 값 설명**
+>
+> *: 모든 값 (예: 모든 분, 모든 시간 등).
+>
+> */n: 매 n 단위 (예: */15는 15분 간격).
+>
+> a-b: 범위 (예: 9-17은 9시부터 17시까지).
+>
+> a,b: 특정 값들 (예: 1,15는 1일과 15일).
+>
+> ?: 특정 값 생략 (주로 일(Day of Month)과 요일(Day of Week) 중 하나를 생략할 때 사용).
+<br>
+
+**b. filter**
+
+```
+filter {
+  mutate {
+    remove_field => [ "@timestamp" ]
+  }
+}
+```
+
+이벤트가 Logstash에 의해 수집되었을 때의 시간인 **@timestamp** 필드는 제거하였다.
+
+<br>
+
+**c. output**
+
+```
+output {
+  elasticsearch {
+    hosts => ["localhost:9200"]
+    index => "인덱스명"
+    document_id => "%{id}"
+  }
+  stdout { codec => json_lines }
+}
+```
+
 
 <br>
 
