@@ -107,16 +107,15 @@
 ![image](https://github.com/user-attachments/assets/83cb6460-a3c0-498a-8623-12702e5d5309)
 
 
-
 <br>
 
 <br>
 
 ## 4️⃣ ERD
 
-<div style="display: flex; justify-content: center; gap: 50px;">
+<div style="display: flex; justify-content: center; gap: 200px;">
   <img src="https://github.com/user-attachments/assets/a19248dc-a26a-4fe0-8a80-cb89726b119a" alt="Image 1" width="165">
-  <img src="https://github.com/user-attachments/assets/4217e24a-e455-425b-8989-ecbe9fc635dc" alt="Image 2" width="400">
+  <img src="https://github.com/user-attachments/assets/eaea307a-1785-4971-8485-deeba36077ca" alt="Image 2" width="400">
 </div>
 
 <br>
@@ -153,35 +152,6 @@
 **예시:**
 
 ```java
-input {
-  jdbc {
-    jdbc_driver_library => "C:/02.devEnv/mysql-connector-java/mysql-connector-java-8.0.18.jar"
-    jdbc_driver_class => "com.mysql.cj.jdbc.Driver"
-    jdbc_connection_string => "jdbc:mysql://192.168.1.77:3306/cradar?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul"
-    jdbc_user => "cradar"
-    jdbc_password => "cradar"
-    schedule => "* * * * *"
-    
-    # SQL_LAST_VALUE를 추적할 컬럼 설정
-    use_column_value => true
-    tracking_column => "created_at"  # 또는 updated_at 등 타임스탬프 컬럼
-    tracking_column_type => "timestamp"
-    
-    # 마지막 실행 시간 저장 위치
-    last_run_metadata_path => "C:/02.devEnv/ELK/logstash-7.11.1/last_run_metadata.txt"
-    
-    # 증분 업데이트를 위한 SQL 쿼리
-    # statement => "SELECT * FROM log WHERE timestamp > :sql_last_value ORDER BY timestamp ASC"
-    statement => "SELECT *, UNIX_TIMESTAMP(created_at) AS unix_ts_in_secs FROM log WHERE (UNIX_TIMESTAMP(created_at) > :sql_last_value AND created_at < NOW()) ORDER BY created_at ASC"
-  }
-}
-
-filter {
-  mutate {
-    remove_field => [ "@timestamp" ]
-  }
-}
-
 output {
   elasticsearch {
     hosts => ["localhost:9200"]
