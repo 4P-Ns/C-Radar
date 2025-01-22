@@ -13,7 +13,7 @@
 ## 📍 Contents
 - [1️⃣ Overview](#1%EF%B8%8F⃣-overview)
 - [2️⃣ Contributors](#2%EF%B8%8F⃣-contributors)
-- [3️⃣ Environment Settings](3%EF%B8%8F⃣-environment-settings)
+- [3️⃣ Environment Settings](#3%EF%B8%8F⃣-environment-settings)
 - [4️⃣ ERD](#4%EF%B8%8F⃣-erd)
 - [5️⃣ Trouble Shooting](#5%EF%B8%8F⃣-trouble-shooting)
 - [6️⃣ Retrospective](#6%EF%B8%8F⃣-retrospective)
@@ -45,7 +45,7 @@
 >출처: https://www.ibm.com/kr-ko/think/topics/customer-churn
 <br>
 
-### 📊 핵심 기능
+### 📊 Core Features
 1. **서비스 이탈자 분석**  
    - 사용 중: INFO 로그 및 반복 WARN 로그 탐지  
    - 사용 종료: 로그 메시지에서 `exit` 또는 `background` 키워드 분석  
