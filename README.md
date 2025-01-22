@@ -2,11 +2,12 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0E4C92&height=300&section=header&text=C-Radar&fontSize=70&fontColor=FFFFFF&animation=fadeIn&width=1200" width="1200" />
 
 
-## <div align="center" style="font-size: 70px; color: #000080; animation: glow 1.5s infinite;">  🔎 Catch your Log, 이탈자 방지와 이상 탐지를 한 번에 🔎 </div>
+## <div align="center" style="font-size: 70px; color: #000080; animation: glow 1.5s infinite;">  🔎 Catch your Log, 이탈자 방지와 이상 탐지를 한 번에 🔎</div>
 
-<br>
+   <p align="center">
+      <img src="https://github.com/user-attachments/assets/f4c1d2a7-eeb7-4e11-a74a-f098196c6a94" width=50%>
+   </p>
 
-<br>
 
 <br>
 
