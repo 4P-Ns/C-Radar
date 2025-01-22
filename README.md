@@ -29,7 +29,7 @@
 **INFO, WARN, ERROR, FATAL** 로그 데이터를 기반으로 사용자 행동과 에러 발생 패턴을 시각화하고,  
 서비스의 품질 향상을 위한 통찰을 제공합니다. 
 
-### 💡 개발 배경
+### 💡 Background
 
 >**고객 이탈**에는 크게 **자발적 이탈**과 **비자발적 이탈**의 두 가지 유형이 있습니다.
 >
@@ -66,8 +66,6 @@
 <br>
 
 ## 2️⃣ Contributors
-
-### [🙆🏻‍♂️ 팀원](#목차)
 
 |<img src="https://avatars.githubusercontent.com/u/80048007?v=4" width="220" height="200"/>|<img src="https://avatars.githubusercontent.com/u/60309978?v=4" width="220" height="200"/>|<img src="https://avatars.githubusercontent.com/u/193213283?v=4" width="220" height="200"/>|<img src="https://avatars.githubusercontent.com/u/115103394?v=4" width="220" height="200"/>|
 |:-:|:-:|:-:|:-:|
