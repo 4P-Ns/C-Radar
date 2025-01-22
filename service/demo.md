@@ -31,8 +31,20 @@
 ---
 
 
-## 🕵🏻‍♂️ Reference 3 - C 온라인 쇼핑몰 
+## 🕵🏻‍♂️ Reference 3 - 가방 전문 온라인 쇼핑몰 'CarryOn'<br>
 
-비자발적 이탈 : 특정시간에 사용자가 많아서 요청 부하 커짐. 데이터를 실시간으로 로드가 안된다거나 ~~하는 상황 (기술적 문제)
+### 새해 맞이 선착순 100명 특별 이벤트: 1월 1일 오후 12시 50% 할인 쿠폰 발행!<br>
 
+✏ 사용자 이탈 발생! -> 로그 확인
 
+![image](https://github.com/user-attachments/assets/1f4a683a-622f-4541-9e40-fa70ee15ddd1)
+
+- 12시에 폭발적으로 증가한 후 정상 로그가 줄어듦.
+
+<br>
+
+✏ 에러 로그 확인
+
+![image](https://github.com/user-attachments/assets/774b8540-394f-4412-a8cf-78b2ec2fd6a4)
+
+- ERROR 로그 증가 -> 대규모 트래픽으로 인한 시스템 부하 확인 
