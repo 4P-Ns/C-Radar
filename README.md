@@ -107,8 +107,7 @@
 
 ### 🖥️ Architecture
 
-
-![image](https://github.com/user-attachments/assets/83cb6460-a3c0-498a-8623-12702e5d5309)
+![image](https://github.com/user-attachments/assets/9f48e40b-36ac-48e6-83b8-909d26a72de4)
 
 
 <br>
@@ -116,11 +115,16 @@
 <br>
 
 ## 4️⃣ ERD
-
+### MySQL
 <div style="display: flex; justify-content: center; gap: 200px;">
   <img src="https://github.com/user-attachments/assets/a19248dc-a26a-4fe0-8a80-cb89726b119a" alt="Image 1" width="165">
   <img src="https://github.com/user-attachments/assets/eaea307a-1785-4971-8485-deeba36077ca" alt="Image 2" width="400">
 </div>
+
+<br>
+
+### Elasticsearch
+![image](https://github.com/user-attachments/assets/7867c7cd-d689-4411-8e31-cbb30c805c03)
 
 <br>
 
