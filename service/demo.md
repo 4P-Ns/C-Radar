@@ -15,7 +15,8 @@
 
 
 ### - User Review 분석을 통해 신규 기능의 조기 출시 결정 및 실행
-![Ref_ACustomer](https://github.com/user-attachments/assets/9c816b26-8f5d-4adf-b553-8e11923a1aba)
+![Ref_UserReview](https://github.com/user-attachments/assets/195ad9a4-30d2-4af8-ac6f-b6f8f16710a6)
+
 
 
 
