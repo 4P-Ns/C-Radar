@@ -45,6 +45,11 @@
 >출처: https://www.ibm.com/kr-ko/think/topics/customer-churn
 <br>
 
+### ❗ Customer Needs
+
+![image](https://github.com/user-attachments/assets/00577483-2a32-495b-a709-8a2e49d75fe8)
+
+
 ### 📊 Core Features
 1. **서비스 이탈자 분석**  
    - 사용 중: INFO 로그 및 반복 WARN 로그 탐지  
