@@ -10,26 +10,27 @@
 
 <br>
 
-## 📍목차
-- [1️⃣ 프로젝트 개요](#1%EF%B8%8F⃣-프로젝트-개요)
-- [2️⃣ 팀원 소개](#2%EF%B8%8F⃣-팀원-소개)
-- [3️⃣ 개발 환경 설정](3%EF%B8%8F⃣-개발-환경-설정)
+## 📍 Contents
+- [1️⃣ Overview](#1%EF%B8%8F⃣-overview)
+- [2️⃣ Contributors](#2%EF%B8%8F⃣-contributors)
+- [3️⃣ Environment Settings](3%EF%B8%8F⃣-environment-settings)
 - [4️⃣ ERD](#4%EF%B8%8F⃣-erd)
-- [5️⃣ 회고](#5%EF%B8%8F⃣-회고)
-- [6️⃣ 피드백](#6%EF%B8%8F⃣-피드백)
+- [5️⃣ Trouble Shooting](#5%EF%B8%8F⃣-trouble-shooting)
+- [6️⃣ Retrospective](#6%EF%B8%8F⃣-retrospective)
+- [7️⃣ Feedbacks](#7%EF%B8%8F⃣-feedbacks)
 
 
 <br>
 
 <br>
 
-## 1️⃣ 프로젝트 개요
-이 프로젝트는 **서비스 로그를 분석**하여 이탈자 탐지와 이상 행동을 식별하는 것을 목표로 합니다.  
+## 1️⃣ Overview
+이 프로젝트는 **시스템 로그를 분석**하여 이탈자 탐지와 이상 행동을 식별하는 것을 목표로 합니다.  
 **INFO, WARN, ERROR, FATAL** 로그 데이터를 기반으로 사용자 행동과 에러 발생 패턴을 시각화하고,  
 서비스의 품질 향상을 위한 통찰을 제공합니다. 
 
->### 💡 개발 배경
->
+### 💡 개발 배경
+
 >**고객 이탈**에는 크게 **자발적 이탈**과 **비자발적 이탈**의 두 가지 유형이 있습니다.
 >
 >### 자발적 이탈
@@ -54,7 +55,9 @@
 
 3. **로그 데이터를 활용한 "대시보드"로 시각화 제공**
 
-   - 대시보드 URL: [Dashboard 바로가기](http://192.168.1.77:5601/app/dashboards#/view/39ad3630-d7da-11ef-97a0-756f62d8a917?_g=(filte[…]A(from%3A'2024-10-29T17%3A55%3A57.524Z'%2Cto%3Anow)))
+   <a href="service/demo.md">
+     <button style="font-size: 100px;">💥 데모 시연</button>
+   </a>
 
 
 </br>
@@ -62,7 +65,7 @@
 
 <br>
 
-## 2️⃣ 팀원 소개
+## 2️⃣ Contributors
 
 ### [🙆🏻‍♂️ 팀원](#목차)
 
@@ -72,9 +75,9 @@
 
 <br>
 
-## 3️⃣ 개발 환경 설정
+## 3️⃣ Environment Settings
 
-### 🛠 기술 스택
+### 🛠 Skills
 
 **Tech Stack**
 
@@ -98,7 +101,7 @@
 
 <br>
 
-### 🖥️ 아키텍처
+### 🖥️ Architecture
 
 
 ![image](https://github.com/user-attachments/assets/83cb6460-a3c0-498a-8623-12702e5d5309)
@@ -109,47 +112,16 @@
 
 <br>
 
-## 4️⃣ 테이블 형태
+## 4️⃣ ERD
 
-![image](https://github.com/user-attachments/assets/a19248dc-a26a-4fe0-8a80-cb89726b119a)
-
-| Field | Contents |
-| :---: | :---: |
-| LEVEL | INFO, WARN, ERROR, FATAL |
-| TIMESTAMP | "2025-01-20T14:12:34Z” Format |
-| SOURCE | ERROR 발생 위치 |
-| USERID | 서비스 사용자 ID |
-| MESSAGE | USER 행동 or ERROR 내용 |
-| LOG_TYPE | 400, 200 |
-
-### LEVEL
-
-INFO, WARN, ERROR, FATAL
-
-### TIMESTAMP
-
-ex.. "2025-01-20T14:12:34Z”
-
-### SOURCE
-
-어디서 에러가 나는가?
-
-### USERID
-
-서비스를 사용한 user의 id
-
-### MESSAGE
-
-user의 행동 혹은 error 내용
-
-### LOG_TYPE
-
-ex.. 404 200
-
+<div style="display: flex; justify-content: center; gap: 50px;">
+  <img src="https://github.com/user-attachments/assets/a19248dc-a26a-4fe0-8a80-cb89726b119a" alt="Image 1" width="165">
+  <img src="https://github.com/user-attachments/assets/4217e24a-e455-425b-8989-ecbe9fc635dc" alt="Image 2" width="400">
+</div>
 
 <br>
 
-## 5️⃣ 트러블슈팅
+## 5️⃣ Trouble Shooting
 
 **⚔ MySQL 데이터가 ElasticSearch에 들어가지 않는 문제**
 
@@ -164,7 +136,7 @@ ex.. 404 200
     jdbc_connection_string => "jdbc:mysql://192.168.1.77:3306/cradar?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul"
 ```
 
-<br>
+<br><br>
 
 **⚔ MySQL의 중복 데이터가 ElasticSearch에 주기마다 삽입되는 문제**
 
@@ -221,10 +193,10 @@ output {
 ```
 
 
-## 6️⃣ 회고
+## 6️⃣ Retrospective
 
 
-## 7️⃣ 피드백
+## 7️⃣ Feedbacks
 
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0E4C92&height=150&section=footer" width="1000" />
